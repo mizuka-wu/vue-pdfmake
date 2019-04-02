@@ -1,33 +1,35 @@
 {
-  "name": "vue-pdfmake",
-  "version": "0.1.0",
-  "private": true,
-  "prettier": {
-    "trailingComma": "es5",
-    "tabWidth": 4,
-    "semi": false,
-    "singleQuote": true
-  },
-  "scripts": {
-    "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build --target lib --name vue-pdfmake src/components/PdfMake",
-    "lint": "vue-cli-service lint"
-  },
-  "dependencies": {
-    "core-js": "^2.6.5",
-    "pdfmake": "^0.1.54",
-    "pdfmake-chinese": "^0.0.8",
-    "vue": "^2.6.6"
-  },
-  "devDependencies": {
-    "@vue/cli-plugin-babel": "^3.0.0",
-    "@vue/cli-plugin-eslint": "^3.0.0",
-    "@vue/cli-service": "^3.0.0",
-    "@vue/eslint-config-prettier": "^4.0.1",
-    "babel-eslint": "^10.0.1",
-    "eslint": "^5.8.0",
-    "eslint-plugin-vue": "^5.0.0",
-    "vue-template-compiler": "^2.5.21",
-    "vuepress": "^0.14.10"
-  }
+    "name": "vue-pdfmake",
+    "version": "0.1.0",
+    "private": true,
+    "prettier": {
+        "trailingComma": "es5",
+        "tabWidth": 4,
+        "semi": false,
+        "singleQuote": true
+    },
+    "scripts": {
+        "serve": "vue-cli-service serve",
+        "build": "vue-cli-service build --target lib --name vue-pdfmake src/components/PdfMake.vue",
+        "lint": "vue-cli-service lint",
+        "docs:dev": "vuepress dev docs",
+        "docs:build": "vuepress build docs"
+    },
+    "dependencies": {
+        "core-js": "^2.6.5",
+        "pdfmake": "^0.1.54",
+        "pdfmake-chinese": "^0.0.8",
+        "vue": "^2.6.6"
+    },
+    "devDependencies": {
+        "@vue/cli-plugin-babel": "^3.0.0",
+        "@vue/cli-plugin-eslint": "^3.0.0",
+        "@vue/cli-service": "^3.0.0",
+        "@vue/eslint-config-prettier": "^4.0.1",
+        "babel-eslint": "^10.0.1",
+        "eslint": "^5.8.0",
+        "eslint-plugin-vue": "^5.0.0",
+        "vue-template-compiler": "^2.5.21",
+        "vuepress": "^1.0.0-alpha.46"
+    }
 }
