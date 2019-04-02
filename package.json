@@ -12,8 +12,8 @@
         "serve": "vue-cli-service serve",
         "build": "vue-cli-service build --target lib --name vue-pdfmake src/components/PdfMake.vue",
         "lint": "vue-cli-service lint",
-        "docs:dev": "vuepress dev docs",
-        "docs:build": "vuepress build docs"
+        "docs:dev": "npx vuepress dev docs",
+        "docs:build": "npx vuepress build docs"
     },
     "dependencies": {
         "core-js": "^2.6.5",

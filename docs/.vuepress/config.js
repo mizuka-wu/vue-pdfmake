@@ -1,7 +1,7 @@
 module.exports = {
+    base: '/vue-pdfmake/',
     title: 'Vue Pdfmake',
     description: 'Vue生成pdf文件',
-    base: '/vue-pdfmake/',
     themeConfig: {
         nav: [
             { text: '主页', link: '/' },
