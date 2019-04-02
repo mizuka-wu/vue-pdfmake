@@ -1,6 +1,6 @@
 ---
 home: true
-heroImage: /hero.png
+heroImage: https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1554203644387&di=14f583ab90295983807ab300852735e9&imgtype=0&src=http%3A%2F%2Fpic.58pic.com%2F58pic%2F15%2F48%2F70%2F78d58PICMYr_1024.png
 actionText: 快速上手 →
 actionLink: /guide/
 features:
