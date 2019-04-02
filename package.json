@@ -2,9 +2,15 @@
   "name": "vue-pdfmake",
   "version": "0.1.0",
   "private": true,
+  "prettier": {
+    "trailingComma": "es5",
+    "tabWidth": 4,
+    "semi": false,
+    "singleQuote": true
+  },
   "scripts": {
     "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build",
+    "build": "vue-cli-service build --target lib --name vue-pdfmake src/components/PdfMake",
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
