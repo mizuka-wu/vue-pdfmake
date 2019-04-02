@@ -9,6 +9,8 @@
   },
   "dependencies": {
     "core-js": "^2.6.5",
+    "pdfmake": "^0.1.54",
+    "pdfmake-chinese": "^0.0.8",
     "vue": "^2.6.6"
   },
   "devDependencies": {
@@ -19,6 +21,7 @@
     "babel-eslint": "^10.0.1",
     "eslint": "^5.8.0",
     "eslint-plugin-vue": "^5.0.0",
-    "vue-template-compiler": "^2.5.21"
+    "vue-template-compiler": "^2.5.21",
+    "vuepress": "^0.14.10"
   }
 }
