@@ -1,23 +1,26 @@
 <template>
-    <div id="app">
-        <img alt="Vue logo" src="./assets/logo.png" />
-    </div>
+    <pdf-make style="height: 100%; width: 100%" id="app">
+        nihao
+    </pdf-make>
 </template>
 
 <script>
+import PdfMake from './components/PdfMake'
 export default {
     name: 'app',
-    components: {},
+    components: {
+        PdfMake,
+    },
 }
 </script>
-
 <style>
+html,
+body {
+    margin: 0px auto;
+    padding: 0px;
+    height: 100%;
+}
 #app {
-    font-family: 'Avenir', Helvetica, Arial, sans-serif;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    text-align: center;
-    color: #2c3e50;
-    margin-top: 60px;
+    margin-bottom: -16px;
 }
 </style>

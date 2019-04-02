@@ -17,8 +17,9 @@
     },
     "dependencies": {
         "core-js": "^2.6.5",
+        "debounce": "^1.2.0",
         "pdfmake": "^0.1.54",
-        "pdfmake-chinese": "^0.0.8",
+        "pdfmake-support-chinese-fonts": "^1.0.3",
         "vue": "^2.6.6"
     },
     "devDependencies": {
