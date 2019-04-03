@@ -38,6 +38,12 @@ export default {
     pageMargins: {
       type: Array,
     },
+    metadata: {
+      type: Object,
+      default() {
+        return {}
+      },
+    },
   },
   data() {
     return {
@@ -47,11 +53,12 @@ export default {
   computed: {
     docDefinition() {
       return {
-        ...DOC_DEFINITION,
+        info: this.metadata,
         pageSize: this.pageSize,
         pageOrientation: this.pageOrientation,
         pageMargins: this.pageMargins,
         content: this.content,
+        ...DOC_DEFINITION,
       }
     },
   },
