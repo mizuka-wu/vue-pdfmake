@@ -13,7 +13,7 @@
         @change="e => (src = e)"
       >
         hello world
-        <div style="font-size: 20px">
+        <div style="font-size: 50px">
           <a href="www.baidu.com">{{ value }}</a>
         </div>
         <span>span</span>
