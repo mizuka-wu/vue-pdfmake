@@ -10,13 +10,14 @@
         ref="pdfMake"
         style="width: 100%"
         :show="true"
+        :info="{ title: '测试' }"
         @change="e => (src = e)"
       >
         hello world
         <div style="font-size: 50px">
           <a href="www.baidu.com">{{ value }}</a>
         </div>
-        <span style="font-weight: 600;">span</span>
+        <span style="font-weight: 600;text-align: center;">span</span>
         <img
           width="100px"
           src="https://is4-ssl.mzstatic.com/image/thumb/Purple128/v4/0b/18/23/0b18235d-9a98-e913-12db-2705bb5278d4/AppIcon-0-1x_U007emarketing-0-85-220-10.png/246x0w.jpg"

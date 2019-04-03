@@ -38,7 +38,7 @@ export default {
     pageMargins: {
       type: Array,
     },
-    metadata: {
+    info: {
       type: Object,
       default() {
         return {}
@@ -53,7 +53,7 @@ export default {
   computed: {
     docDefinition() {
       return {
-        info: this.metadata,
+        info: this.info,
         pageSize: this.pageSize,
         pageOrientation: this.pageOrientation,
         pageMargins: this.pageMargins,

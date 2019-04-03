@@ -1,5 +1,6 @@
 import getBase64Image from './image.js'
 import { DEFAULT_IMAGE } from './config.js'
+
 /**
  * vnode2content的方案
  * @param {vnode} vnode - vnode或者列数
@@ -113,6 +114,9 @@ export function styleAdapter(vnode, parentStyle = {}) {
       case 'font-style': {
         style.italics = value === 'italic'
         break
+      }
+      case 'text-align': {
+        style.alignment = value
       }
     }
     return style
