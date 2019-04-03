@@ -1,35 +1,43 @@
 {
-    "name": "vue-pdfmake",
-    "version": "0.1.0",
-    "private": true,
-    "prettier": {
-        "trailingComma": "es5",
-        "semi": false,
-        "singleQuote": true
-    },
-    "scripts": {
-        "serve": "vue-cli-service serve",
-        "build": "vue-cli-service build --target lib --name vue-pdfmake src/components/PdfMake.vue",
-        "lint": "vue-cli-service lint",
-        "docs:dev": "npx vuepress dev docs",
-        "docs:build": "npx vuepress build docs"
-    },
-    "dependencies": {
-        "core-js": "^2.6.5",
-        "debounce": "^1.2.0",
-        "pdfmake": "^0.1.54",
-        "pdfmake-support-chinese-fonts": "^1.0.3",
-        "vue": "^2.6.6"
-    },
-    "devDependencies": {
-        "@vue/cli-plugin-babel": "^3.0.0",
-        "@vue/cli-plugin-eslint": "^3.0.0",
-        "@vue/cli-service": "^3.0.0",
-        "@vue/eslint-config-prettier": "^4.0.1",
-        "babel-eslint": "^10.0.1",
-        "eslint": "^5.8.0",
-        "eslint-plugin-vue": "^5.0.0",
-        "vue-template-compiler": "^2.5.21",
-        "vuepress": "^1.0.0-alpha.46"
-    }
+  "name": "vue-pdfmake",
+  "version": "0.1.0",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mizuka-wu/vue-pdfmake/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:mizuka-wu/vue-pdfmake.git"
+  },
+  "homepage": "https://www.mizuka.top/vue-pdfmake/",
+  "prettier": {
+    "trailingComma": "es5",
+    "semi": false,
+    "singleQuote": true
+  },
+  "scripts": {
+    "serve": "vue-cli-service serve",
+    "build": "vue-cli-service build --target lib --name vue-pdfmake src/components/PdfMake.vue",
+    "lint": "vue-cli-service lint",
+    "docs:dev": "npx vuepress dev docs",
+    "docs:build": "npx vuepress build docs"
+  },
+  "dependencies": {
+    "core-js": "^2.6.5",
+    "debounce": "^1.2.0",
+    "pdfmake": "^0.1.54",
+    "pdfmake-support-chinese-fonts": "^1.0.3",
+    "vue": "^2.6.6"
+  },
+  "devDependencies": {
+    "@vue/cli-plugin-babel": "^3.0.0",
+    "@vue/cli-plugin-eslint": "^3.0.0",
+    "@vue/cli-service": "^3.0.0",
+    "@vue/eslint-config-prettier": "^4.0.1",
+    "babel-eslint": "^10.0.1",
+    "eslint": "^5.8.0",
+    "eslint-plugin-vue": "^5.0.0",
+    "vue-template-compiler": "^2.5.21",
+    "vuepress": "^1.0.0-alpha.46"
+  }
 }
