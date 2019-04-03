@@ -117,6 +117,7 @@ export function styleAdapter(vnode, parentStyle = {}) {
       }
       case 'text-align': {
         style.alignment = value
+        break
       }
     }
     return style
