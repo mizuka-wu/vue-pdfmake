@@ -105,7 +105,7 @@ export function styleAdapter(vnode, parentStyle = {}) {
   )
 
   if (originStyle.margin) {
-    let margin = margin.replace(';', '').split(' ')
+    let margin = originStyle.margin.replace(';', '').split(' ')
     switch (margin.length) {
       case 1: {
         let value = margin[0]
