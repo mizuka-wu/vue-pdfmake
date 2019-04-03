@@ -7,37 +7,14 @@
 <script>
 import debounce from 'debounce'
 import getBase64Image from './lib/image.js'
-import * as pdfMake from 'pdfmake-support-chinese-fonts/pdfmake.min'
-import * as pdfFonts from 'pdfmake-support-chinese-fonts/vfs_fonts'
-pdfMake.vfs = pdfFonts.pdfMake.vfs
-pdfMake.fonts = {
-  Roboto: {
-    normal: 'Roboto-Regular.ttf',
-    bold: 'Roboto-Regular.ttf',
-    italics: 'Roboto-Regular.ttf',
-    bolditalics: 'Roboto-Regular.ttf',
-  },
-  fangzhen: {
-    normal: 'fzhei-jt.TTF',
-    bold: 'fzhei-jt.TTF',
-    italics: 'fzhei-jt.TTF',
-    bolditalics: 'fzhei-jt.TTF',
-  },
-}
-
-const DEBOUNCE_TIME = 1000
-
-const DEFAULT_IMAGE =
-  'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAANSURBVBhXYzh8+PB/AAffA0nNPuCLAAAAAElFTkSuQmCC'
-
-/**
- * 默认字体修改
- */
-const DOC_DEFINITION = {
-  defaultStyle: {
-    font: 'fangzhen',
-  },
-}
+import pdfMake from './lib/pdfmake.js'
+import {
+  DEBOUNCE_TIME,
+  DEFAULT_IMAGE,
+  PAGE_SIZE,
+  PAFE_ORIENTATION,
+  DOC_DEFINITION,
+} from './lib/config.js'
 
 export default {
   props: {
@@ -49,65 +26,14 @@ export default {
       type: String,
       default: 'A4',
       validator(value) {
-        return [
-          '4A0',
-          '2A0',
-          'A0',
-          'A1',
-          'A2',
-          'A3',
-          'A4',
-          'A5',
-          'A6',
-          'A7',
-          'A8',
-          'A9',
-          'A10',
-          'B0',
-          'B1',
-          'B2',
-          'B3',
-          'B4',
-          'B5',
-          'B6',
-          'B7',
-          'B8',
-          'B9',
-          'B10',
-          'C0',
-          'C1',
-          'C2',
-          'C3',
-          'C4',
-          'C5',
-          'C6',
-          'C7',
-          'C8',
-          'C9',
-          'C10',
-          'RA0',
-          'RA1',
-          'RA2',
-          'RA3',
-          'RA4',
-          'SRA0',
-          'SRA1',
-          'SRA2',
-          'SRA3',
-          'SRA4',
-          'EXECUTIVE',
-          'FOLIO',
-          'LEGAL',
-          'LETTER',
-          'TABLOID',
-        ].includes(value)
+        return PAGE_SIZE.includes(value)
       },
     },
     pageOrientation: {
       type: String,
       default: 'portrait',
       validator(value) {
-        return ['landscape', 'portrait'].includes(value)
+        return PAFE_ORIENTATION.includes(value)
       },
     },
     pageMargins: {
