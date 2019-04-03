@@ -2,6 +2,14 @@ import getBase64Image from './image.js'
 import { DEFAULT_IMAGE } from './config.js'
 
 /**
+ * 替换string 或者 value到一个具体数字
+ * @param {string, number} value
+ */
+function value2number(value) {
+  return Number((value + '').replace(';', '').replace('px', ''))
+}
+
+/**
  * vnode2content的方案
  * @param {vnode} vnode - vnode或者列数
  * @param {object[]} content - 内容
@@ -96,30 +104,83 @@ export function styleAdapter(vnode, parentStyle = {}) {
     normalizedStyle
   )
 
-  return Object.keys(originStyle).reduce((style, attr) => {
-    let value = originStyle[attr]
-    switch (attr) {
-      case 'font-size': {
-        style.fontSize = Number((value + '').replace('px', ''))
+  if (originStyle.margin) {
+    let margin = margin.replace(';', '').split(' ')
+    switch (margin.length) {
+      case 1: {
+        let value = margin[0]
+        margin = [value, value, value]
         break
       }
-      case 'font-weight': {
-        if (isNaN(value)) {
-          style.bold = value.includes('bold')
-        } else {
-          style.bold = Number(value) >= 500
-        }
-        break
-      }
-      case 'font-style': {
-        style.italics = value === 'italic'
-        break
-      }
-      case 'text-align': {
-        style.alignment = value
+      case 2: {
+        margin = [...margin, ...margin]
         break
       }
     }
-    return style
-  }, Object.assign({}, parentStyle))
+    // 赋值系列
+    ;['top', 'right', 'bottom', 'left'].forEach((key, index) => {
+      let value = margin[index] || 0
+      originStyle['margin-' + key] = originStyle['margin-' + key] || value
+    })
+  }
+
+  return Object.keys(originStyle).reduce(
+    (style, attr) => {
+      let value = originStyle[attr]
+      switch (attr) {
+        case 'font-size': {
+          style.fontSize = value2number(value)
+          break
+        }
+        case 'font-weight': {
+          if (isNaN(value)) {
+            style.bold = value.includes('bold')
+          } else {
+            style.bold = Number(value) >= 500
+          }
+          break
+        }
+        case 'font-style': {
+          style.italics = value === 'italic'
+          break
+        }
+        case 'text-align': {
+          style.alignment = value
+          break
+        }
+        case 'width': {
+          style.width = value2number(value)
+          break
+        }
+        case 'height': {
+          style.height = value2number(value)
+          break
+        }
+        // margin: [left, top, right, bottom] 需要特殊处理
+        case 'margin-left': {
+          style.margin[0] = value2number(value)
+          break
+        }
+        case 'margin-top': {
+          style.margin[1] = value2number(value)
+          break
+        }
+        case 'margin-right': {
+          style.margin[2] = value2number(value)
+          break
+        }
+        case 'margin-bottom': {
+          style.margin[3] = value2number(value)
+          break
+        }
+      }
+      return style
+    },
+    Object.assign(
+      {
+        margin: [0, 0, 0, 0],
+      },
+      parentStyle
+    )
+  )
 }

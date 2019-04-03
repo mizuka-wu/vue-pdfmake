@@ -51,14 +51,11 @@ export default {
   data() {
     return {
       header: function(currentPage, pageCount, pageSize) {
-        console.log(currentPage)
-        console.log(pageCount)
-        console.log(pageSize)
+        console.log(currentPage, pageCount, pageSize)
         return []
       },
       footer: function(currentPage, pageCount) {
-        console.log(currentPage)
-        console.log(pageCount)
+        console.log(currentPage, pageCount)
         return []
       },
       background: [],
@@ -88,12 +85,12 @@ export default {
   watch: {
     docDefinition: {
       immediate: true,
-      handler(docDefinition) {
+      handler: debounce(function(docDefinition) {
         const pdfDocGenerator = pdfMake.createPdf(docDefinition)
         pdfDocGenerator.getDataUrl(dataUrl => {
           this.$emit('change', dataUrl)
         })
-      },
+      }, DEBOUNCE_TIME),
     },
   },
   mounted() {
@@ -105,6 +102,8 @@ export default {
 .vue-pdfmake-container * {
   display: block;
   color: #000000;
+  padding: 0 !important;
+  margin: 0;
 }
 
 .vue-pdfmake-container a {

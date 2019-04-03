@@ -15,7 +15,12 @@
       >
         hello world
         <div style="font-size: 50px">
-          <a href="www.baidu.com">{{ value }}</a>
+          <a
+            style="margin-top: 20px; margin: 10px;"
+            href="https://www.baidu.com"
+          >
+            {{ value }}
+          </a>
         </div>
         <span style="font-weight: 600;text-align: center;">span</span>
         <img
