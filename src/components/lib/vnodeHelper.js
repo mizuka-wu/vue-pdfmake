@@ -98,12 +98,22 @@ export function styleAdapter(vnode, parentStyle = {}) {
   return Object.keys(originStyle).reduce((style, attr) => {
     let value = originStyle[attr]
     switch (attr) {
-      case 'font-size':
+      case 'font-size': {
         style.fontSize = Number((value + '').replace('px', ''))
         break
-      case 'font-weight':
-        style.bold = value < 500
+      }
+      case 'font-weight': {
+        if (isNaN(value)) {
+          style.bold = value.includes('bold')
+        } else {
+          style.bold = Number(value) >= 500
+        }
         break
+      }
+      case 'font-style': {
+        style.italics = value === 'italic'
+        break
+      }
     }
     return style
   }, Object.assign({}, parentStyle))
