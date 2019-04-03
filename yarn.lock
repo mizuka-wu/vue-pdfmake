@@ -950,7 +950,7 @@
   resolved "https://registry.yarnpkg.com/@vue/web-component-wrapper/-/web-component-wrapper-1.2.0.tgz#bb0e46f1585a7e289b4ee6067dcc5a6ae62f1dd1"
   integrity sha512-Xn/+vdm9CjuC9p3Ae+lTClNutrVhsXpzxvoTXXtoys6kVRX9FkueSUAqSWAyZntmVLlR4DosBV4pH8y5Z/HbUw==
 
-"@vuepress/core@^1.0.0-alpha.44":
+"@vuepress/core@^1.0.0-alpha.46":
   version "1.0.0-alpha.46"
   resolved "https://registry.yarnpkg.com/@vuepress/core/-/core-1.0.0-alpha.46.tgz#a3756dad01e81cde012145afbd74c5d9ec6cf0bc"
   integrity sha512-0dInY/68nmdkxTI481NdTVGsMWxdg1m3r4GqkdjYC+xn5E/MlQXUmsaBZy5jmQCsJ13+ZcXCCs7ymZqWjIWedw==
@@ -1062,7 +1062,7 @@
     semver "^5.5.0"
     upath "^1.1.0"
 
-"@vuepress/theme-default@^1.0.0-alpha.44":
+"@vuepress/theme-default@^1.0.0-alpha.46":
   version "1.0.0-alpha.46"
   resolved "https://registry.yarnpkg.com/@vuepress/theme-default/-/theme-default-1.0.0-alpha.46.tgz#b25d4c2c56b225367d01762029497be3b7ef166e"
   integrity sha512-OkHdyeywioNCH452ZGPO1fDYaMM8R+23CO1IvApNFG1GmRAwnEkoN12cVa/mMexWfk/N3BSpdsCOrGahtjbZlA==
@@ -9374,13 +9374,13 @@ vuepress-plugin-container@^2.0.0:
   dependencies:
     markdown-it-container "^2.0.0"
 
-vuepress@1.0.0-alpha.44:
-  version "1.0.0-alpha.44"
-  resolved "https://registry.yarnpkg.com/vuepress/-/vuepress-1.0.0-alpha.44.tgz#044048047651f7e8890d48886e97f2ad5eb5ddea"
-  integrity sha512-m6tYdmQbqZQ2frqyPa/OwFoRRv+SY0nkv6dai+74+Vy4IAnPmY7/otrlvmWVNpPh6X4pT2HvNh08YetfUnWX7g==
+vuepress@^1.0.0-alpha.46:
+  version "1.0.0-alpha.46"
+  resolved "https://registry.yarnpkg.com/vuepress/-/vuepress-1.0.0-alpha.46.tgz#a5b141fa47d87e522f196947b3f9f0e3b73c9fd7"
+  integrity sha512-7UIHpcG3cvBhPRIX3ws2DO6pdJKIxal9CYZ+vDhRCK5x+6kJteYqzeqbkEFvuYfa6whISxd6sLsdPby+Tqlavg==
   dependencies:
-    "@vuepress/core" "^1.0.0-alpha.44"
-    "@vuepress/theme-default" "^1.0.0-alpha.44"
+    "@vuepress/core" "^1.0.0-alpha.46"
+    "@vuepress/theme-default" "^1.0.0-alpha.46"
     cac "^6.3.9"
 
 watchpack@^1.5.0:
