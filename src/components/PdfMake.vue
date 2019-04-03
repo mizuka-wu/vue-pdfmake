@@ -1,6 +1,9 @@
 <template>
-  <div v-show="show">
-    <slot></slot>
+  <div v-show="show" class="vue-pdfmake-container">
+    <slot name="background" />
+    <slot name="header" :currentPage="1" :pageCount="1" :pageSize="1" />
+    <slot />
+    <slot name="footer" :currentPage="1" :pageCount="1" />
   </div>
 </template>
 
@@ -47,6 +50,18 @@ export default {
   },
   data() {
     return {
+      header: function(currentPage, pageCount, pageSize) {
+        console.log(currentPage)
+        console.log(pageCount)
+        console.log(pageSize)
+        return []
+      },
+      footer: function(currentPage, pageCount) {
+        console.log(currentPage)
+        console.log(pageCount)
+        return []
+      },
+      background: [],
       content: [],
     }
   },
@@ -57,21 +72,22 @@ export default {
         pageSize: this.pageSize,
         pageOrientation: this.pageOrientation,
         pageMargins: this.pageMargins,
+        background: this.background,
+        header: this.header,
         content: this.content,
+        footer: this.footer,
         ...DOC_DEFINITION,
       }
     },
   },
   methods: {
     createPdf: debounce(function() {
-      let vnodes = this.$slots.default || []
-      this.content = vnodes2content(vnodes)
+      this.content = vnodes2content(this.$slots.default || []) // 正文
     }, DEBOUNCE_TIME),
   },
   watch: {
     docDefinition: {
       immediate: true,
-      deep: true,
       handler(docDefinition) {
         const pdfDocGenerator = pdfMake.createPdf(docDefinition)
         pdfDocGenerator.getDataUrl(dataUrl => {
@@ -85,3 +101,13 @@ export default {
   },
 }
 </script>
+<style>
+.vue-pdfmake-container * {
+  display: block;
+  color: #000000;
+}
+
+.vue-pdfmake-container a {
+  text-decoration: none;
+}
+</style>
