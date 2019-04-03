@@ -6,6 +6,10 @@
 
 项目基于 VNODE 将 vnode 按照一定的规则转为 pdfmake 的相关配置文件
 
+## 文档
+
+[查看文档](https://www.mizuka.top/vue-pdfmake/)
+
 ## Project setup
 
 ```
