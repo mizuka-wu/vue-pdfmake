@@ -1,0 +1,17 @@
+language: node_js
+node_js:
+  - 'lts/*'
+cache:
+  yarn: true
+deploy:
+  - provider: npm
+    email: 'YOUR_EMAIL_ADDRESS'
+    api_key: 'YOUR_AUTH_TOKEN'
+    on:
+      branch: master
+
+  - provider: script
+    script: bash docs.sh
+    on:
+      branch: master
+script: build
