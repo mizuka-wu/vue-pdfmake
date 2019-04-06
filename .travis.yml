@@ -1,6 +1,9 @@
 language: node_js
 node_js:
   - 'lts/*'
+script:
+  - yarn build
+  - yarn docs:build
 cache:
   yarn: true
 deploy:
@@ -10,9 +13,8 @@ deploy:
     on:
       branch: master
 
-  - provider: script
-    github_token: $GITHUB_TOKEN
-    script: bash docs.sh
-    on:
-      branch: master
-script: yarn build
+  - provider: pages
+    skip-cleanup: true
+    local_dir: docs/.vuepress/dist
+    github-token: $GITHUB_TOKEN
+    keep-history: true
