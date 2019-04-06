@@ -1,7 +1,11 @@
 {
   "name": "vue-pdfmake",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "license": "MIT",
+  "main": "dist/vue-pdfmake.common.js",
+  "files": [
+    "dist"
+  ],
   "bugs": {
     "url": "https://github.com/mizuka-wu/vue-pdfmake/issues"
   },
