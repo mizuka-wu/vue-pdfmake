@@ -11,6 +11,7 @@ deploy:
       branch: master
 
   - provider: script
+    github_token: $GITHUB_TOKEN
     script: bash docs.sh
     on:
       branch: master

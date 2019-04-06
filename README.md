@@ -1,6 +1,7 @@
 # vue-pdfmake
 
 基于 pdfmake
+![](https://travis-ci.com/mizuka-wu/vue-pdfmake.svg?branch=master)
 
 ## 一个 vue 组件，能够将内部的 slot 转为 pdf
 
