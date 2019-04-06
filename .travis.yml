@@ -5,8 +5,8 @@ cache:
   yarn: true
 deploy:
   - provider: npm
-    email: 'YOUR_EMAIL_ADDRESS'
-    api_key: 'YOUR_AUTH_TOKEN'
+    email: $email
+    api_key: $api_key
     on:
       branch: master
 
@@ -14,4 +14,4 @@ deploy:
     script: bash docs.sh
     on:
       branch: master
-script: build
+script: yarn build
