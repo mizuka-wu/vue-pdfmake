@@ -50,14 +50,6 @@ export default {
   },
   data() {
     return {
-      header: function(currentPage, pageCount, pageSize) {
-        console.log(currentPage, pageCount, pageSize)
-        return []
-      },
-      footer: function(currentPage, pageCount) {
-        console.log(currentPage, pageCount)
-        return []
-      },
       background: [],
       content: [],
     }
