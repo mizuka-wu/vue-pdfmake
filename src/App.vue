@@ -40,6 +40,8 @@
 
 <script>
 import PdfMake from './components/PdfMake'
+import ttf from 'url-loader!./assets/微软雅黑.ttf'
+console.log(ttf)
 export default {
   name: 'app',
   components: {
