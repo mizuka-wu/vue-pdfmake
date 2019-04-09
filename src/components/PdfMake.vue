@@ -3,6 +3,7 @@
     <slot name="background" />
     <slot name="header" :currentPage="1" :pageCount="1" :pageSize="1" />
     <slot />
+
     <slot name="footer" :currentPage="1" :pageCount="1" />
   </div>
 </template>
@@ -11,6 +12,7 @@
 import debounce from 'debounce'
 import { vnodes2content } from './lib/vnodeHelper.js'
 import pdfMake from './lib/pdfmake.js'
+
 import {
   DEBOUNCE_TIME,
   PAGE_SIZE,

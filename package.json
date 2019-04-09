@@ -14,11 +14,6 @@
     "url": "git@github.com:mizuka-wu/vue-pdfmake.git"
   },
   "homepage": "https://www.mizuka.top/vue-pdfmake/",
-  "prettier": {
-    "trailingComma": "es5",
-    "semi": false,
-    "singleQuote": true
-  },
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build --target lib --name vue-pdfmake src/components/PdfMake.vue",
